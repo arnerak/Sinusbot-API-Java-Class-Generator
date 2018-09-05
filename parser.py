@@ -1,3 +1,7 @@
+import urllib.request
+import json
+import re
+
 apiJsonUrl = 'https://www.sinusbot.com/api/api_data.js'
 
 classFrame = """
@@ -122,10 +126,6 @@ funFrame = """
 putFrame = """			put("[paramName]", [paramName].toString());"""
 descFrame = """	 * @param [paramName] [description]"""
 retFrame = """	 * [ret]"""
-
-import urllib.request
-import json
-import re
 
 def typeStrToJavaType(typestr):
     typestr = re.search('<p>(.*?)</p>', typestr).group(1)
